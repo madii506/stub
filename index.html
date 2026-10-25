@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>stub</title>
+<title>STUB</title>
 <meta name="description" content="Memecoins that pay dividends in stocks. Launch a reward coin on StonkFun paired with a stock, and its trading tax pays holders in that stock.">
 <meta property="og:title" content="stub">
 <meta property="og:description" content="Memecoins that pay dividends in stocks.">
 <meta name="theme-color" content="#071013">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23071013'/%3E%3Cg fill='none' stroke='%2369aac1' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 70 L40 48 L56 60 L80 34'/%3E%3Cpath d='M64 33 L81 32 L80 49'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%2369aac1' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 70 L40 48 L56 60 L80 34'/%3E%3Cpath d='M64 33 L81 32 L80 49'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -32,8 +32,8 @@ a { color: inherit; text-decoration: none; }
 .btn:hover { transform: translateY(-1px); }
 .btn.pri { background: var(--acc); color: var(--bg); }
 .btn.pri:hover { background: var(--acc2); }
-.btn.sec { background: var(--card); border-color: var(--line2); color: var(--ink); }
-.btn.sec:hover { border-color: var(--acc); }
+.btn.alt { background: var(--card); border-color: var(--line2); color: var(--ink); }
+.btn.alt:hover { border-color: var(--acc); }
 /* hero */
 .hero { padding: 72px 0 40px; }
 .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
@@ -106,27 +106,50 @@ h2 { margin: 0; font-weight: 800; font-size: clamp(30px, 3.6vw, 46px); letter-sp
 .faq summary::after { content: '+'; color: var(--acc); font-weight: 400; font-size: 24px; line-height: 1; transition: transform .3s; }
 .faq details[open] summary::after { transform: rotate(45deg); }
 .faq p { color: var(--ink2); margin: 12px 0 0; max-width: 760px; }
-.cta { margin: 30px 0 80px; padding: 50px; border-radius: 22px; background: linear-gradient(140deg, #10252c, #0a171b); border: 1px solid var(--line2); display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; position: relative; overflow: hidden; }
+.cta { margin: 30px 0 90px; padding: 50px; border-radius: 22px; background: linear-gradient(140deg, #10252c, #0a171b); border: 1px solid var(--line2); display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; position: relative; overflow: hidden; }
 .cta::after { content: ''; position: absolute; right: -120px; top: -160px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(closest-side, rgba(105,170,193,.2), transparent); }
 .cta h2 { font-size: clamp(28px, 3.2vw, 40px); }
 .foot { border-top: 1px solid var(--line); padding: 26px 0; color: var(--mute); font-size: 13px; }
 .foot .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .rv { opacity: 0; transform: translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .rv.in { opacity: 1; transform: none; }
+
+/* motion */
+.prog { position: fixed; left: 0; top: 0; height: 2px; width: 100%; z-index: 30; background: linear-gradient(90deg, var(--acc), var(--acc2)); transform-origin: left; transform: scaleX(0); }
+.lanes { display: grid; gap: 12px; margin: 0 -9999px 28px; padding: 0 9999px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.lane { overflow: visible; }
+.lt { display: flex; gap: 12px; width: max-content; will-change: transform; }
+.mini { display: flex; align-items: center; height: 58px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); overflow: hidden; transition: border-color .25s, transform .25s var(--ease); }
+.mini:hover { border-color: var(--acc); transform: translateY(-2px); }
+.mini .m { display: flex; align-items: center; gap: 10px; padding: 0 14px; }
+.mini .av { width: 32px; height: 32px; font-size: 13px; }
+.mini b { font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
+.mini small { font-size: 12px; color: var(--mute); }
+.mini .q { height: 100%; display: flex; align-items: center; padding: 0 14px; border-left: 2px dashed rgba(7,16,19,.35); background: linear-gradient(160deg, #8cc3d6, #5a9bb3); color: var(--bg); font-weight: 800; font-size: 13px; }
+.card { position: relative; transform-style: preserve-3d; }
+.card.tl { transition: none; }
+.card .sh2 { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgba(185,224,236,.08), transparent 45%); opacity: 0; transition: opacity .3s; }
+.card:hover .sh2 { opacity: 1; }
+.card { animation: none; }
+.card.shown { animation: in .7s var(--ease) forwards; }
+.vis .stubc { transition: transform .2s linear; }
+h2 .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; }
+h2 .w > span { display: inline-block; transform: translateY(105%); transition: transform .9s var(--ease); transition-delay: calc(var(--i) * 50ms); }
+.rv.in h2 .w > span, h2.in .w > span { transform: none; }
 @media (max-width: 960px) {
   .hero .wrap { grid-template-columns: 1fr; } .vis { height: 400px; } .stubc { width: min(420px, 92vw); } .v2 { left: 8%; }
-  .cards, .steps { grid-template-columns: 1fr; } .links { display: none; } .nav .btn.sec { display: none; }
+  .cards, .steps { grid-template-columns: 1fr; } .links { display: none; } .nav .btn.alt { display: none; }
   .stats { gap: 22px; } .cta { padding: 30px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .rv, .card { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
-<div class="bgfx"></div><div class="grid"></div>
+<div class="bgfx"></div><div class="grid"></div><div class="prog" id="prog"></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="#"><svg viewBox="0 0 100 100"><g fill="none" stroke="#69aac1" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M14 74 L40 48 L58 62 L86 32"/><path d="M68 31 L87 30 L86 49"/></g></svg>stub</a>
   <nav class="links"><a href="#coins">coins</a><a href="#how">how it works</a><a href="#faq">faq</a></nav>
-  <a class="btn sec" href="#coins">Explore</a>
+  <a class="btn alt" href="#coins">Explore</a>
   <a class="btn pri" href="https://www.stonkfun.xyz/" target="_blank" rel="noopener">Launch on StonkFun ↗</a>
 </div></header>
 
@@ -135,7 +158,7 @@ h2 { margin: 0; font-weight: 800; font-size: clamp(30px, 3.6vw, 46px); letter-sp
     <span class="tag"><i></i>built on StonkFun</span>
     <h1>Memecoins that pay <em>dividends</em> in stocks.</h1>
     <p class="lead">Launch a coin on StonkFun paired with a stock, as a reward coin. Every trade is taxed, and the tax pays holders in that stock.</p>
-    <div class="row"><a class="btn pri" href="#coins">See coins paying now</a><a class="btn sec" href="#how">How it works</a></div>
+    <div class="row"><a class="btn pri" href="#coins">See coins paying now</a><a class="btn alt" href="#how">How it works</a></div>
     <div class="stats"><div><b id="sTotal">—</b><span>reward coins paired with stocks</span></div><div><b id="sVol">—</b><span>24h volume, top 30</span></div><div><b id="sStocks">—</b><span>stocks they pay in</span></div></div>
   </div>
   <div class="vis" aria-hidden="true">
@@ -149,6 +172,7 @@ h2 { margin: 0; font-weight: 800; font-size: clamp(30px, 3.6vw, 46px); letter-sp
 <section class="sec" id="coins"><div class="wrap">
   <div class="sh rv"><div><h2>Coins paying in <em>stocks</em> right now.</h2><p class="sub">Reward coins on StonkFun paired with tokenized stocks, live from StonkFun's public API. Click any coin to trade it on StonkFun.</p></div>
     <div class="tabs" id="tabs"><button data-s="volume" class="on">24h volume</button><button data-s="marketCap">market cap</button><button data-s="newest">newest</button></div></div>
+  <div class="lanes" id="lanes"><div class="lane" data-dir="1"><div class="lt" id="lane1"></div></div><div class="lane" data-dir="-1"><div class="lt" id="lane2"></div></div></div>
   <div class="cards" id="cards"></div>
   <div class="src mono" id="src">loading from StonkFun…</div>
 </div></section>
@@ -168,11 +192,9 @@ h2 { margin: 0; font-weight: 800; font-size: clamp(30px, 3.6vw, 46px); letter-sp
   <details><summary>Are the coins on this page real?</summary><p>Yes. Every coin in the list is read live from StonkFun's public API: reward coins whose pair is a tokenized stock. Market cap and volume are StonkFun's numbers.</p></details>
   <details><summary>How much do holders get?</summary><p>It depends on the coin's tax and its trading volume. Each card shows the coin's tax when StonkFun reports it. More trading means more paid out.</p></details>
   <details><summary>Is stub part of StonkFun?</summary><p>No. stub is independent and built on StonkFun. It isn't affiliated with StonkFun or with the issuers of the tokenized stocks.</p></details>
-  <details><summary>Is this financial advice?</summary><p>No. Memecoins are risky and can go to zero. A payout in a stock doesn't make the coin safe.</p></details>
 </div></section>
 
 <div class="wrap"><div class="cta rv"><div><h2>Hold the meme. <em>Collect the stock.</em></h2><p class="sub">Pair it with a stock, make it a reward coin, launch it on StonkFun.</p></div><a class="btn pri" href="https://www.stonkfun.xyz/" target="_blank" rel="noopener">Launch on StonkFun ↗</a></div></div>
-<footer class="foot"><div class="wrap"><span>stub · built on StonkFun · not affiliated with StonkFun</span><span>memecoins are risky · not financial advice</span></div></footer>
 
 <script>
 const SF = 'https://www.stonkfun.xyz/api/public/v1/tokens?mode=reward&category=xstock&pageSize=30&sort=';
@@ -194,9 +216,9 @@ async function load() {
       countTo($('#sVol'), coins.reduce((a, c) => a + (c.market?.volume24hUsd || 0), 0), usd);
       countTo($('#sStocks'), new Set(coins.map(c => c.quote?.symbol)).size, n => Math.round(n));
     }
-    render(coins);
+    render(coins); if (sort === 'volume' || !LANE.length) lanes(coins);
     $('#src').textContent = 'StonkFun public API · reward coins paired with tokenized stocks · sorted by ' + ({ volume: '24h volume', marketCap: 'market cap', newest: 'newest' })[sort] + ' · ' + new Date().toLocaleTimeString();
-    try { const q = await fetch('https://lite-api.jup.ag/tokens/v2/search?query=' + coins.map(c => c.mint).join(',')); if (q.ok) { for (const t of await q.json()) if (t.icon) ICONS[t.id] = t.icon; render(coins, true); heroFill(coins); } } catch (e) {}
+    try { const q = await fetch('https://lite-api.jup.ag/tokens/v2/search?query=' + coins.map(c => c.mint).join(',')); if (q.ok) { for (const t of await q.json()) if (t.icon) ICONS[t.id] = t.icon; render(coins, true); heroFill(coins); if (sort === 'volume') lanes(coins); } } catch (e) {}
   } catch (e) { $('#cards').innerHTML = `<div class="empty">StonkFun isn't answering right now (${esc(e.message)}). Try again in a moment.</div>`; $('#src').textContent = ''; }
 }
 function render(coins, quiet) {
@@ -205,12 +227,50 @@ function render(coins, quiet) {
     <div class="m"><div class="top">${av(c, i)}<div class="nm"><b>$${esc(c.symbol)}${c.status === 'graduated' ? '<span class="pill g">graduated</span>' : ''}</b><small>${esc((c.name || '').slice(0, 30))}</small></div></div>
     <div class="mk"><span>mcap <b>${usd(c.market?.marketCapUsd)}</b></span><span>vol <b>${usd(c.market?.volume24hUsd)}</b></span>${c.transferFee?.bps != null ? `<span>tax <b>${(c.transferFee.bps / 100).toFixed(c.transferFee.bps % 100 ? 1 : 0)}%</b></span>` : ''}</div></div>
     <div class="s"><span>pays in</span><b>${esc((c.quote?.symbol || '').replace(/X$/, 'x'))}</b></div></a>`).join('');
+  wireCards();
 }
 function heroFill(coins) { const top = coins.filter(c => ICONS[c.mint]).slice(0, 3); ['#v1', '#v2', '#v3'].forEach((id, i) => { const c = top[i]; if (!c) return; const el = $(id); el.querySelector('.av').outerHTML = av(c, i); el.querySelector('.nm b').textContent = '$' + c.symbol; const q = (c.quote?.symbol || '').replace(/X$/, 'x'); el.querySelector('.nm small').textContent = 'paired with ' + q; el.querySelector('.s b').textContent = q; }); }
 $('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; sort = b.dataset.s; document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('on', x === b)); load(); });
 load(); setInterval(() => { if (!document.hidden && sort === 'volume') load(); }, 60000);
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
+// ── motion: lanes, scroll progress, card reveal + tilt, hero parallax, smooth wheel ──
+let LANE = [];
+function lanes(coins) {
+  const one = coins.map((c, i) => `<a class="mini" href="https://www.stonkfun.xyz/token/${encodeURIComponent(c.mint)}" target="_blank" rel="noopener"><span class="m">${av(c, i)}<span><b>$${esc(c.symbol)}</b> <small>${usd(c.market?.marketCapUsd)}</small></span></span><span class="q">${esc((c.quote?.symbol || '').replace(/X$/, 'x'))}</span></a>`);
+  const half = Math.ceil(one.length / 2), a = one.slice(0, half).join(''), b = one.slice(half).join('') || a;
+  $('#lane1').innerHTML = a + a + a; $('#lane2').innerHTML = b + b + b;
+  LANE = [[$('#lane1'), 1, 0], [$('#lane2'), -1, 0]];
+}
+let vel = 0, lastY = scrollY, hoverLane = null;
+let mx = 0, my = 0; addEventListener('pointermove', e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+document.querySelectorAll('.lane').forEach(l => { l.addEventListener('pointerenter', () => hoverLane = l); l.addEventListener('pointerleave', () => hoverLane = null); });
+(function tick() {
+  const dy = scrollY - lastY; lastY = scrollY; vel += (dy - vel) * .12;
+  const max = document.documentElement.scrollHeight - innerHeight; $('#prog').style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+  for (const L of LANE) { const [el, dir] = L; const w = el.scrollWidth / 3; if (!w) continue; if (hoverLane !== el.parentElement) L[2] -= (.5 + Math.min(8, Math.abs(vel) * .25)) * dir; if (L[2] <= -w) L[2] += w; if (L[2] > 0) L[2] -= w; el.style.transform = `translate3d(${L[2]}px,0,0)`; }
+  const k = Math.min(1, scrollY / innerHeight);
+  [['#v1', -1], ['#v2', 1], ['#v3', -.6]].forEach(([id, d], i) => { const el = $(id); if (el) el.style.transform = `translate(${d * k * 70 + mx * 14 * (i + 1)}px, ${-k * 60 * (i + 1) + my * 10 * (i + 1)}px) rotate(${[-5, 3, -2][i] + d * k * 8}deg)`; });
+  requestAnimationFrame(tick);
+})();
+const cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.style.animationDelay = (e.target.dataset.i % 3) * 90 + 'ms'; e.target.classList.add('shown'); cio.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+function wireCards() {
+  document.querySelectorAll('#cards .card').forEach((el, i) => { el.dataset.i = i; el.insertAdjacentHTML('beforeend', '<i class="sh2"></i>'); cio.observe(el);
+    if (!matchMedia('(pointer: fine)').matches) return;
+    el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height; el.classList.add('tl'); el.style.transform = `perspective(900px) rotateX(${(.5 - py) * 7}deg) rotateY(${(px - .5) * 9}deg) translateY(-3px)`; el.style.setProperty('--x', px * 100 + '%'); el.style.setProperty('--y', py * 100 + '%'); });
+    el.addEventListener('pointerleave', () => { el.classList.remove('tl'); el.style.transition = 'transform .6s cubic-bezier(.2,.8,.2,1)'; el.style.transform = ''; setTimeout(() => el.style.transition = '', 600); }); });
+}
+// headings rise in word by word
+document.querySelectorAll('h2').forEach(h => { let i = 0; const walk = n => [...n.childNodes].forEach(c => { if (c.nodeType === 3) { const f = document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach(w => { if (!w) return; if (/^\s+$/.test(w)) { f.append(' '); return; } const o = document.createElement('span'); o.className = 'w'; const sp = document.createElement('span'); sp.textContent = w; sp.style.setProperty('--i', i++); o.append(sp); f.append(o); }); c.replaceWith(f); } else if (c.nodeType === 1) walk(c); }); walk(h); });
+document.querySelectorAll('.cta h2').forEach(h => io.observe(h));
+// smooth wheel scrolling on desktop
+if (matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.style.scrollBehavior = 'auto'; let target = scrollY, cur = scrollY, run = false;
+  const loop = () => { cur += (target - cur) * .1; if (Math.abs(target - cur) < .5) { cur = target; run = false; } scrollTo(0, cur); if (run) requestAnimationFrame(loop); };
+  addEventListener('wheel', e => { if (e.ctrlKey) return; e.preventDefault(); if (!run) cur = target = scrollY; target = Math.max(0, Math.min(document.documentElement.scrollHeight - innerHeight, target + e.deltaY)); if (!run) { run = true; requestAnimationFrame(loop); } }, { passive: false });
+  addEventListener('scroll', () => { if (!run) cur = target = scrollY; }, { passive: true });
+  document.addEventListener('click', e => { const a = e.target.closest('a[href^="#"]'); if (!a) return; const el = a.getAttribute('href') === '#' ? document.body : document.querySelector(a.getAttribute('href')); if (!el) return; e.preventDefault(); cur = scrollY; target = Math.max(0, el.getBoundingClientRect().top + scrollY - 70); if (!run) { run = true; requestAnimationFrame(loop); } });
+}
 </script>
 </body>
 </html>
